@@ -1,0 +1,3 @@
+[submodule "edk2-msm"]
+	path = edk2-msm
+	url = https://github.com/edk2-porting/edk2-msm.git

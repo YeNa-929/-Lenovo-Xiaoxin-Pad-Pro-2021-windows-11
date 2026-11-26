@@ -2,6 +2,12 @@
 
 대상 모델은 **TB-J716F**(Snapdragon 870, SM8250-AC)이며 빌드 타깃은 `j716f`다. Renegade Project가 2022년에 이 모델을 추가했다. 원래 포팅 PR에 기기 사진이 있으며, 이 가이드는 업스트림 커밋 `e1952621f419f8db60ed28271264e1b5184c571d`을 기준으로 한다. [기기 지원 PR](https://github.com/edk2-porting/edk2-msm/pull/161) · [기기별 소스](https://github.com/edk2-porting/edk2-msm/tree/e1952621f419f8db60ed28271264e1b5184c571d/Platform/Lenovo/sm8250)
 
+## 빌드된 이미지 받기
+
+[시험용 UEFI 릴리스](https://github.com/YeNa-929/-Lenovo-Xiaoxin-Pad-Pro-2021-windows-11/releases/tag/j716f-uefi-preview-1)에서 `boot-j716f.img`와 `SHA256SUMS`를 같은 폴더에 내려받는다. Linux에서는 `sha256sum -c SHA256SUMS`, Windows PowerShell에서는 `Get-FileHash .\boot-j716f.img -Algorithm SHA256`로 확인할 수 있다.
+
+Ubuntu 24.04에서 빌드한 이미지는 6,725,632바이트다. Android boot header v1을 읽고 압축을 해제해 BootShim, 7 MiB UEFI 펌웨어, TB-J716F 전용 DTB를 원본과 바이트 단위로 대조했다. 이 빌드의 실기기 부팅과 Windows 11 구동은 미검증이다.
+
 ## 어디까지 가능한가
 
 | 항목 | 확인 범위 |
